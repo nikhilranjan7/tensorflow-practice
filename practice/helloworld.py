@@ -1,3 +1,11 @@
+'''
+TensorFlow flow:
+1. Build a computational graph
+2. Initialize variables
+3. Create Session
+4. Run graph in Session
+5. Close session 
+'''
 import tensorflow as tf
 
 # It will print Hello with tensorflow
