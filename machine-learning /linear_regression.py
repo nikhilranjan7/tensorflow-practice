@@ -8,6 +8,7 @@ from sklearn import preprocessing, model_selection, svm
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 from matplotlib import style
+import pickle
 
 style.use('ggplot')
 
@@ -40,7 +41,6 @@ x_lately = x[-forecast_out:]
 x = x[:-forecast_out]
 
 df.dropna(inplace=True)
-y = np.array(df['label'])
 y = np.array(df['label'])
 
 x_train, x_test, y_train, y_test = model_selection.train_test_split(x, y, test_size=0.2)
