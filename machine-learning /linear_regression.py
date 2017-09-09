@@ -48,8 +48,15 @@ x_train, x_test, y_train, y_test = model_selection.train_test_split(x, y, test_s
 
 # Simple linear Regression
 a = time.time()
-clf = LinearRegression()
+clf = LinearRegression(n_jobs=-1)
 clf.fit(x_train, y_train)
+# Saving classifier so no need to train it every time
+with open('linearregression.pickle', 'wb') as f:
+    pickle.dump(clf, f)
+pickle_in = open('linearregression.pickle', 'rb')
+clf = pickle.load(pickle_in)
+
+
 accuracy = clf.score(x_test, y_test)
 b = time.time()
 print("LinearRegression took",round(b-a,3),"seconds")
