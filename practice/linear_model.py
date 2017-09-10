@@ -1,10 +1,11 @@
 import pandas as pd
+import tempfile
 
 # Reding and labeling dataset
 train_file = tempfile.NamedTemporaryFile()
 test_file = tempfile.NamedTemporaryFile()
-train_file.name = "/data/train.csv"
-test_file.name = "/data/test.csv"
+train_file.name = "./data/train.csv"
+test_file.name = "./data/test.csv"
 
 CSV_COLUMNS = [
     "age", "workclass", "fnlwgt", "education", "education_num",
