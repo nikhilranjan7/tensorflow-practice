@@ -17,6 +17,8 @@ def k_nearest_neighbors(data, predict, k=3):
 
     votes = [i[1] for i in sorted(distances)[:k]]
     vote_result = Counter(votes).most_common(1)[0][0]
+    confidence = Counter(votes).most_common(1)[0][1] / k
+    print("Confidence:", confidence)
     return vote_result
 
 df = pd.read_csv('data/breast-cancer-wisconsin.data.txt')
