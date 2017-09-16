@@ -1,7 +1,7 @@
 import tensorflow as tf
 '''
 Feed Forward network:
-input > weights > hidden layer 1 (activation function) > weights > hidden layer 2 (activation function) > weights > output layer
+input > weights > hidden layer 1 (activation function) > weights > hidden layer 2 (activation function) > weights > hidden layer 3 (activation function) > weights > output layer
 
 Backpropagation:
 compare output to intended output > cost function (e.g., cross entropy)
@@ -32,9 +32,7 @@ x = tf.placeholder('float',[None, 784])
 y = tf.placeholder('float', [None, 10])
 
 def neural_network_model(data):
-
     # (input_data * weights) + biases
-
     hidden_1_layer = {'weights': tf.Variable(tf.random_normal([784, n_nodes_hl1]))
     , 'biases': tf.Variable(tf.random_normal([n_nodes_hl1]))}
 
